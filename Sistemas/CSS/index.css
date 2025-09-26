@@ -1,0 +1,217 @@
+/* Estilo do Header */
+.header {
+    grid-area: header;
+    background-color: #8C1523;
+    height: 200px;
+}
+
+/* Estilo do Logo no Header */
+.imagem-logo-header {
+    width: auto; /* Ajuste para responsivo */
+    height: 150px; /* Altura fixa para responsivo */
+    transition: filter 0.3s ease; 
+}
+
+/* Estilo do Carrinho no Header */
+.carrinho-compras {
+    width: 50px; /* Ajuste para responsivo */
+    height: auto;
+    transition: filter 0.3s ease; 
+}
+
+.carrinho-compras:hover {
+    filter: brightness(0) invert(1);
+}
+.modal-button:hover{
+    filter: brightness(130%);
+}
+/* Estilo do Footer */
+.footer {
+    grid-area: footer;
+    background-color: #A9A9A9;
+    height: 100px;
+    display: grid;
+    place-items: center;
+}
+
+/* Estilo do Main Article */
+.mainArticle {
+    grid-area: article;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Adicionado para espaçamento interno */
+}
+
+/* Estilo do Main Nav */
+.mainNav {
+    grid-area: nav;
+    background-color: #E6E6FA;
+    display: flex;
+    justify-content: center; /* Centralizar o carrossel */
+    align-items: center;
+}
+
+/* Estilo do Carrossel */
+.carousel {
+    max-width: 300px; /* Largura máxima do carrossel */
+    width: 100%;
+}
+
+/* Estilo das Ads */
+.ads {
+    grid-area: ads;
+    background-color: #E6E6FA;
+    display: grid;
+    place-items: center;
+}
+
+/* Estilo do Body */
+body {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "nav article ads"
+    "footer footer footer";
+    grid-template-rows: auto 1fr auto; /* Ajustado para altura automática no header e footer */
+    min-height: 100vh; /* Altura mínima da viewport */
+}
+
+/* Estilo do Formulário */
+.form {
+    --input-focus: #8C1523;
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #FFF5E6; /* Cor de fundo suave */
+    --main-color: #8C1523; /* Cor principal combinando com o header */
+    padding: 20px;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    max-width: 350px; /* Largura máxima para tornar o formulário mais estreito */
+    width: 100%; /* Largura total para dispositivos menores */
+}
+
+/* Estilo do Título do Formulário */
+.title {
+    color: var(--font-color);
+    font-weight: 900;
+    font-size: 20px;
+    text-align: center; /* Centralizar o texto */
+    margin-bottom: 15px; /* Reduzido o espaçamento inferior */
+}
+
+/* Estilo do Subtítulo do Formulário */
+.title span {
+    color: var(--font-color-sub);
+    font-weight: 600;
+    font-size: 17px;
+}
+
+/* Estilo dos Inputs do Formulário */
+.input, select {
+    width: 100%; /* Largura total do input */
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
+    outline: none;
+}
+
+
+/* Foco nos Inputs */
+.input:focus::placeholder{
+    color: #8C1523;
+    background-color: #FFF5E6;
+}
+
+/* Estilo do Container de Login com Redes Sociais */
+.login-with {
+    display: flex;
+    justify-content: center; /* Centralizar os botões */
+    gap: 20px;
+}
+
+/* Estilo dos Botões de Login com Redes Sociais */
+.button-log {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    color: var(--font-color);
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo dos Ícones de Redes Sociais */
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--main-color);
+}
+
+/* Estilo dos Botões de Login e Confirmação */
+.button-log:active, .button-confirm:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
+}
+
+.button-confirm {
+    margin-top: 20px; /* Ajuste de espaçamento superior */
+    width: 100%; /* Largura total */
+    max-width: 200px; /* Largura máxima */
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--font-color);
+    cursor: pointer;
+}
+@media (max-width: 991px) {
+    .ads, .mainNav {
+        display: none;
+    }
+}
+
+.text-success {
+    display: inline-block; /* Necessário para o transform funcionar corretamente */
+    animation: PulaPula 1s linear infinite;
+}
+
+@keyframes PulaPula {
+    0% {
+        transform: scale(0.9); 
+    }
+    25%{
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(1.1); 
+    }
+    75%{
+        transform: scale(1); 
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
